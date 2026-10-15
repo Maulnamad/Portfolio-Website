@@ -477,7 +477,7 @@
 
         .next-project {
             padding: 38px;
-            margin: 15px 0 75px;
+            margin: 15px auto 75px;
             background: var(--ink);
             color: white;
             border-radius: 22px;
@@ -888,22 +888,3 @@
 </body>
 
 </html>
-"""
-
-detail_path = base / "maul_aleighty_pos_detail.html"
-detail_path.write_text(detail, encoding="utf-8")
-
-# Create an updated homepage copy with a link on the Aleighty card.
-old_tag = '<span class="tag">Project preview</span>'
-new_tag = old_tag + '<a href="maul_aleighty_pos_detail.html" class="project-detail-link"
-    style="display:inline-flex;margin:10px 0 0 5px;font-size:10px;font-weight:700;gap:6px">View project ↗</a>'
-home_updated = home.replace(old_tag, new_tag, 1)
-if ".project-detail-link:hover" not in home_updated:
-home_updated = home_updated.replace(".tag { display: inline-flex;", ".project-detail-link:hover { text-decoration:
-underline; }\n .tag { display: inline-flex;", 1)
-updated_home_path = base / "maul_product_designer_portfolio_with_detail.html"
-updated_home_path.write_text(home_updated, encoding="utf-8")
-
-print(f"Created project detail page: {detail_path} ({detail_path.stat().st_size:,} bytes)")
-print(f"Created updated homepage: {updated_home_path} ({updated_home_path.stat().st_size:,} bytes)")
-print("Both files exist:", detail_path.exists() and updated_home_path.exists())
