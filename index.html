@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Maul is a Product Designer turning business needs into thoughtful digital experiences." />
+  <meta name="description"
+    content="Maul is a Product Designer turning business needs into thoughtful digital experiences." />
   <title>Maul — Product Designer</title>
   <style>
     :root {
@@ -17,8 +19,15 @@
       --radius: 22px;
       --max: 1160px;
     }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       background: var(--bg);
@@ -26,189 +35,1146 @@
       font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       -webkit-font-smoothing: antialiased;
     }
-    a { color: inherit; text-decoration: none; }
-    button, a { -webkit-tap-highlight-color: transparent; }
-    .wrap { width: min(var(--max), calc(100% - 48px)); margin: 0 auto; }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 48px));
+      margin: 0 auto;
+    }
+
     .nav {
-      height: 82px; display: flex; align-items: center; justify-content: space-between;
-      border-bottom: 1px solid rgba(23,23,21,.08);
+      height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(23, 23, 21, .08);
     }
-    .brand { font-size: 24px; font-weight: 850; letter-spacing: -1.8px; }
-    .brand span { color: var(--accent-dark); }
-    .nav-links { display: flex; align-items: center; gap: 34px; color: #50514d; font-size: 13px; font-weight: 550; }
-    .nav-links a:hover { color: var(--ink); }
+
+    .brand {
+      font-size: 24px;
+      font-weight: 850;
+      letter-spacing: -1.8px;
+    }
+
+    .brand span {
+      color: var(--accent-dark);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+      color: #50514d;
+      font-size: 13px;
+      font-weight: 550;
+    }
+
+    .nav-links a:hover {
+      color: var(--ink);
+    }
+
     .nav-cta {
-      display: inline-flex; align-items: center; gap: 10px; background: var(--ink); color: white;
-      padding: 13px 17px; border-radius: 999px; font-size: 12px; font-weight: 650; transition: transform .2s, background .2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--ink);
+      color: white;
+      padding: 13px 17px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 650;
+      transition: transform .2s, background .2s;
     }
-    .nav-cta:hover { transform: translateY(-2px); background: #33332f; }
-    .hero { padding: 112px 0 88px; display: grid; grid-template-columns: 1.2fr .8fr; gap: 50px; align-items: end; }
-    .eyebrow { display: flex; align-items: center; gap: 10px; font-size: 11px; text-transform: uppercase; letter-spacing: 1.65px; color: var(--muted); font-weight: 750; }
-    .status-dot { width: 7px; height: 7px; border-radius: 50%; background: #70a982; box-shadow: 0 0 0 4px rgba(112,169,130,.13); }
-    h1 { margin: 26px 0 24px; font-size: clamp(52px, 6.2vw, 82px); line-height: .99; letter-spacing: -5.5px; font-weight: 750; max-width: 760px; }
-    h1 .highlight { position: relative; z-index: 0; white-space: nowrap; }
-    h1 .highlight::after { content: ""; position: absolute; left: 2px; right: -3px; bottom: 6px; height: 18px; background: var(--accent); z-index: -1; transform: rotate(-1.2deg); }
-    .hero-copy { max-width: 460px; color: var(--muted); font-size: 16px; line-height: 1.8; margin: 0; }
-    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 32px; }
-    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 12px; padding: 15px 20px; border-radius: 999px; font-size: 13px; font-weight: 650; transition: .2s; }
-    .btn-dark { background: var(--ink); color: white; }
-    .btn-dark:hover { background: #34342f; transform: translateY(-2px); }
-    .btn-light { border: 1px solid #dcdcd5; background: transparent; }
-    .btn-light:hover { border-color: var(--ink); transform: translateY(-2px); }
-    .hero-side { align-self: end; padding: 0 0 7px 28px; border-left: 1px solid var(--line); }
-    .hero-side p { margin: 0 0 18px; font-size: 13px; line-height: 1.75; color: var(--muted); }
-    .hero-side strong { color: var(--ink); font-weight: 650; }
-    .side-meta { display: flex; flex-wrap: wrap; gap: 7px; }
-    .pill { border: 1px solid var(--line); padding: 8px 11px; border-radius: 999px; font-size: 11px; color: #565751; background: rgba(255,255,255,.6); }
-    .section { padding: 76px 0; }
-    .section-head { display: flex; justify-content: space-between; gap: 30px; align-items: end; margin-bottom: 30px; }
-    .section-label { color: var(--muted); text-transform: uppercase; font-size: 10px; letter-spacing: 1.8px; font-weight: 750; margin-bottom: 13px; }
-    h2 { font-size: clamp(31px, 4vw, 47px); letter-spacing: -2.4px; line-height: 1.08; margin: 0; font-weight: 720; }
-    .section-intro { max-width: 370px; color: var(--muted); font-size: 13px; line-height: 1.75; margin: 0; }
-    .projects { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
-    .project { min-width: 0; }
-    .project-visual { min-height: 315px; border-radius: var(--radius); overflow: hidden; position: relative; display: flex; align-items: center; justify-content: center; }
-    .visual-pos { background: #eee9de; }
-    .visual-mobility { background: #dfe7e2; }
-    .visual-pay { background: #e7e3f2; }
-    .visual-hiring { background: #e9e6df; }
-    .mock-window { width: 70%; max-width: 360px; min-height: 205px; background: white; border: 1px solid rgba(20,20,20,.08); border-radius: 13px; box-shadow: 0 20px 50px rgba(28,28,24,.12); padding: 13px; transform: rotate(-3deg); }
-    .mock-top { display: flex; gap: 4px; padding-bottom: 12px; border-bottom: 1px solid #eee; }
-    .mock-top i { display: block; width: 5px; height: 5px; border-radius: 50%; background: #d9d9d2; }
-    .pos-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; padding-top: 14px; }
-    .pos-main { background: #f6f5f0; border-radius: 7px; padding: 10px; }
-    .tiny-label { font-size: 7px; color: #8a8a82; letter-spacing: .4px; }
-    .big-price { font-size: 20px; letter-spacing: -1px; font-weight: 800; margin: 9px 0; }
-    .mini-line { height: 5px; border-radius: 5px; background: #deded6; margin-top: 6px; }
-    .mini-line.short { width: 54%; }
-    .pos-items { display: grid; gap: 6px; }
-    .item-row { display: flex; align-items: center; gap: 6px; }
-    .item-thumb { width: 22px; height: 22px; border-radius: 5px; background: #e9c56e; }
-    .item-thumb.two { background: #d6a89c; }
-    .item-thumb.three { background: #a9bba9; }
-    .item-copy { flex: 1; }
-    .item-copy .mini-line { margin: 0 0 4px; height: 4px; }
-    .phone { width: 145px; height: 260px; border: 5px solid #20211f; background: #fafaf7; border-radius: 24px; box-shadow: 0 20px 50px rgba(28,28,24,.16); padding: 12px 9px; transform: rotate(5deg); position: relative; }
-    .phone-notch { width: 42px; height: 7px; background: #20211f; border-radius: 0 0 8px 8px; margin: -12px auto 15px; }
-    .phone-title { font-size: 10px; font-weight: 800; margin-bottom: 10px; }
-    .map-shape { height: 80px; border-radius: 9px; background: #dbe7d9; overflow: hidden; position: relative; margin-bottom: 12px; }
-    .road { position: absolute; height: 9px; width: 130%; top: 32px; left: -15px; background: #fff; transform: rotate(-24deg); border: 1px solid #cdd8ca; }
-    .road.r2 { top: 45px; transform: rotate(38deg); }
-    .map-pin { position: absolute; width: 11px; height: 11px; border-radius: 50% 50% 50% 0; background: #f2bd32; transform: rotate(-45deg); left: 65%; top: 24px; border: 2px solid white; }
-    .phone-card { padding: 9px; border: 1px solid #eaeae5; border-radius: 8px; margin-top: 7px; }
-    .phone-card .mini-line { height: 4px; margin-top: 4px; }
-    .pay-window { width: 72%; max-width: 360px; padding: 22px; background: #fff; border-radius: 13px; box-shadow: 0 20px 50px rgba(28,28,24,.12); transform: rotate(2deg); }
-    .pay-header { display: flex; justify-content: space-between; align-items: center; font-size: 9px; color: #7a7889; }
-    .pay-balance { background: #29273a; color: white; border-radius: 10px; padding: 17px; margin: 15px 0; }
-    .pay-balance small { font-size: 8px; opacity: .7; }
-    .pay-balance strong { display: block; font-size: 22px; margin-top: 7px; letter-spacing: -1px; }
-    .pay-bars { display: flex; align-items: end; gap: 7px; height: 65px; padding: 0 8px; }
-    .pay-bars i { flex: 1; background: #b7a9e5; border-radius: 4px 4px 0 0; }
-    .pay-bars i:nth-child(1) { height: 38%; } .pay-bars i:nth-child(2) { height: 65%; } .pay-bars i:nth-child(3) { height: 48%; } .pay-bars i:nth-child(4) { height: 82%; } .pay-bars i:nth-child(5) { height: 58%; } .pay-bars i:nth-child(6) { height: 100%; } .pay-bars i:nth-child(7) { height: 72%; }
-    .hiring-window { width: 75%; max-width: 365px; padding: 17px; background: #fff; border-radius: 12px; box-shadow: 0 20px 50px rgba(28,28,24,.12); transform: rotate(-2deg); }
-    .hiring-title { font-size: 13px; font-weight: 800; letter-spacing: -.4px; margin-bottom: 12px; }
-    .candidate { display: flex; gap: 9px; align-items: center; border: 1px solid #ededeb; border-radius: 8px; padding: 8px; margin-top: 7px; }
-    .avatar { width: 26px; height: 26px; border-radius: 8px; background: #e9c6a5; }
-    .avatar.b { background: #c4d3c1; } .avatar.c { background: #c8c0e1; }
-    .candidate .mini-line { margin-top: 4px; height: 4px; }
-    .candidate .mini-line:first-child { width: 75px; background: #bcbcb5; }
-    .score { margin-left: auto; font-size: 10px; font-weight: 800; color: #608d6d; }
-    .project-info { padding: 19px 2px 0; display: flex; justify-content: space-between; gap: 18px; align-items: start; }
-    .project-title { font-size: 20px; letter-spacing: -.7px; font-weight: 750; margin: 0 0 7px; }
-    .project-desc { margin: 0; font-size: 12px; line-height: 1.65; color: var(--muted); max-width: 380px; }
-    .project-meta { font-size: 10px; color: #777871; text-align: right; white-space: nowrap; }
-    .project-meta span { display: block; margin-bottom: 8px; color: #343530; font-weight: 650; }
-    .tag { display: inline-flex; margin-top: 12px; padding: 6px 9px; background: rgba(255,255,255,.7); border: 1px solid rgba(20,20,20,.08); border-radius: 999px; font-size: 9px; color: #5e5f59; }
-    .about-band { background: #eeeee8; border-radius: 28px; padding: 58px; display: grid; grid-template-columns: .8fr 1.2fr; gap: 55px; align-items: start; }
-    .about-mark { width: 74px; height: 74px; border-radius: 23px; background: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 32px; font-weight: 850; letter-spacing: -2px; transform: rotate(-5deg); }
-    .about-copy p { font-size: 15px; line-height: 1.9; color: #62635d; margin: 20px 0 0; max-width: 650px; }
-    .about-copy p strong { color: var(--ink); font-weight: 650; }
-    .services { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); }
-    .service { padding: 24px 22px 10px 0; border-right: 1px solid var(--line); margin-right: 22px; }
-    .service:last-child { border-right: 0; margin-right: 0; }
-    .service-num { color: #a3a49c; font-size: 11px; margin-bottom: 28px; }
-    .service h3 { font-size: 16px; letter-spacing: -.5px; margin: 0 0 10px; }
-    .service p { color: var(--muted); font-size: 12px; line-height: 1.7; margin: 0; }
-    .journey { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .journey-card { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 23px; min-height: 190px; }
-    .journey-card .year { color: #8a8b83; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; }
-    .journey-card h3 { margin: 28px 0 10px; font-size: 17px; letter-spacing: -.5px; }
-    .journey-card p { color: var(--muted); font-size: 12px; line-height: 1.7; margin: 0; }
-    .contact { background: var(--ink); color: white; border-radius: 26px; padding: 55px 58px; display: flex; justify-content: space-between; align-items: end; gap: 30px; }
-    .contact .section-label { color: #aaa99f; }
-    .contact h2 { max-width: 620px; }
-    .contact p { color: #b6b6ad; font-size: 13px; line-height: 1.7; max-width: 450px; margin: 18px 0 0; }
-    .contact .btn { background: var(--accent); color: var(--ink); flex-shrink: 0; }
-    .contact .btn:hover { background: #ffda65; transform: translateY(-2px); }
-    footer { padding: 30px 0; display: flex; justify-content: space-between; align-items: center; gap: 24px; color: var(--muted); font-size: 11px; }
-    .footer-left strong { display: block; font-size: 18px; letter-spacing: -1px; color: var(--ink); margin-bottom: 4px; }
-    .socials { display: flex; gap: 20px; }
-    .socials a:hover { color: var(--ink); }
-    .note { font-size: 10px; color: #8b8c84; margin-top: 12px; }
-    .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .review-card { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; position: relative; transition: transform .2s, border-color .2s, box-shadow .2s; }
-    .review-card:hover { transform: translateY(-3px); border-color: rgba(223,174,27,.45); box-shadow: 0 14px 28px -10px rgba(23,23,21,.07); }
-    .review-card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
-    .review-stars { display: inline-flex; gap: 3px; color: var(--accent-dark); }
-    .review-stars svg { width: 14px; height: 14px; fill: currentColor; }
-    .review-tag { font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; padding: 3px 8px; border-radius: 999px; background: rgba(23,23,21,.05); color: var(--muted); }
-    .review-card.featured { border-color: rgba(223,174,27,.35); background: linear-gradient(180deg, #ffffff 0%, #faf8f2 100%); }
-    .review-card.featured .review-tag { background: rgba(245,197,66,.2); color: #9c7304; }
-    .review-quote { font-size: 13px; line-height: 1.7; color: var(--ink); margin: 0 0 20px 0; flex-grow: 1; }
-    .review-author { display: flex; align-items: center; gap: 12px; padding-top: 16px; border-top: 1px solid var(--line); }
-    .author-avatar { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 750; color: white; flex-shrink: 0; }
-    .avatar-1 { background: linear-gradient(135deg, #171715, #3c3d37); }
-    .avatar-2 { background: linear-gradient(135deg, #dfae1b, #f5c542); color: #171715; }
-    .avatar-3 { background: linear-gradient(135deg, #2b3a4a, #4a637d); }
-    .author-info h4 { margin: 0; font-size: 13px; font-weight: 700; color: var(--ink); }
-    .author-info p { margin: 2px 0 0; font-size: 11px; color: var(--muted); }
-    .reviews-metrics { display: flex; align-items: center; justify-content: space-around; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 18px 22px; margin-top: 18px; }
-    .metric-item { display: flex; flex-direction: column; align-items: center; text-align: center; }
-    .metric-val { font-size: 20px; font-weight: 850; letter-spacing: -.6px; color: var(--ink); }
-    .metric-label { font-size: 11px; color: var(--muted); margin-top: 2px; font-weight: 550; }
-    .metric-divider { width: 1px; height: 26px; background: var(--line); }
+
+    .nav-cta:hover {
+      transform: translateY(-2px);
+      background: #33332f;
+    }
+
+    .hero {
+      padding: 112px 0 88px;
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 50px;
+      align-items: end;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.65px;
+      color: var(--muted);
+      font-weight: 750;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #70a982;
+      box-shadow: 0 0 0 4px rgba(112, 169, 130, .13);
+    }
+
+    h1 {
+      margin: 26px 0 24px;
+      font-size: clamp(52px, 6.2vw, 82px);
+      line-height: .99;
+      letter-spacing: -5.5px;
+      font-weight: 750;
+      max-width: 760px;
+    }
+
+    h1 .highlight {
+      position: relative;
+      z-index: 0;
+      white-space: nowrap;
+    }
+
+    h1 .highlight::after {
+      content: "";
+      position: absolute;
+      left: 2px;
+      right: -3px;
+      bottom: 6px;
+      height: 18px;
+      background: var(--accent);
+      z-index: -1;
+      transform: rotate(-1.2deg);
+    }
+
+    .hero-copy {
+      max-width: 460px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 15px 20px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 650;
+      transition: .2s;
+    }
+
+    .btn-dark {
+      background: var(--ink);
+      color: white;
+    }
+
+    .btn-dark:hover {
+      background: #34342f;
+      transform: translateY(-2px);
+    }
+
+    .btn-light {
+      border: 1px solid #dcdcd5;
+      background: transparent;
+    }
+
+    .btn-light:hover {
+      border-color: var(--ink);
+      transform: translateY(-2px);
+    }
+
+    .hero-side {
+      align-self: end;
+      padding: 0 0 7px 28px;
+      border-left: 1px solid var(--line);
+    }
+
+    .hero-side p {
+      margin: 0 0 18px;
+      font-size: 13px;
+      line-height: 1.75;
+      color: var(--muted);
+    }
+
+    .hero-side strong {
+      color: var(--ink);
+      font-weight: 650;
+    }
+
+    .side-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .pill {
+      border: 1px solid var(--line);
+      padding: 8px 11px;
+      border-radius: 999px;
+      font-size: 11px;
+      color: #565751;
+      background: rgba(255, 255, 255, .6);
+    }
+
+    .section {
+      padding: 76px 0;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      align-items: end;
+      margin-bottom: 30px;
+    }
+
+    .section-label {
+      color: var(--muted);
+      text-transform: uppercase;
+      font-size: 10px;
+      letter-spacing: 1.8px;
+      font-weight: 750;
+      margin-bottom: 13px;
+    }
+
+    h2 {
+      font-size: clamp(31px, 4vw, 47px);
+      letter-spacing: -2.4px;
+      line-height: 1.08;
+      margin: 0;
+      font-weight: 720;
+    }
+
+    .section-intro {
+      max-width: 370px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.75;
+      margin: 0;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .project {
+      min-width: 0;
+    }
+
+    .project-visual {
+      min-height: 315px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .visual-pos {
+      background: #eee9de;
+    }
+
+    .visual-mobility {
+      background: #dfe7e2;
+    }
+
+    .visual-pay {
+      background: #e7e3f2;
+    }
+
+    .visual-hiring {
+      background: #e9e6df;
+    }
+
+    .mock-window {
+      width: 70%;
+      max-width: 360px;
+      min-height: 205px;
+      background: white;
+      border: 1px solid rgba(20, 20, 20, .08);
+      border-radius: 13px;
+      box-shadow: 0 20px 50px rgba(28, 28, 24, .12);
+      padding: 13px;
+      transform: rotate(-3deg);
+    }
+
+    .mock-top {
+      display: flex;
+      gap: 4px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .mock-top i {
+      display: block;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #d9d9d2;
+    }
+
+    .pos-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 9px;
+      padding-top: 14px;
+    }
+
+    .pos-main {
+      background: #f6f5f0;
+      border-radius: 7px;
+      padding: 10px;
+    }
+
+    .tiny-label {
+      font-size: 7px;
+      color: #8a8a82;
+      letter-spacing: .4px;
+    }
+
+    .big-price {
+      font-size: 20px;
+      letter-spacing: -1px;
+      font-weight: 800;
+      margin: 9px 0;
+    }
+
+    .mini-line {
+      height: 5px;
+      border-radius: 5px;
+      background: #deded6;
+      margin-top: 6px;
+    }
+
+    .mini-line.short {
+      width: 54%;
+    }
+
+    .pos-items {
+      display: grid;
+      gap: 6px;
+    }
+
+    .item-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .item-thumb {
+      width: 22px;
+      height: 22px;
+      border-radius: 5px;
+      background: #e9c56e;
+    }
+
+    .item-thumb.two {
+      background: #d6a89c;
+    }
+
+    .item-thumb.three {
+      background: #a9bba9;
+    }
+
+    .item-copy {
+      flex: 1;
+    }
+
+    .item-copy .mini-line {
+      margin: 0 0 4px;
+      height: 4px;
+    }
+
+    .phone {
+      width: 145px;
+      height: 260px;
+      border: 5px solid #20211f;
+      background: #fafaf7;
+      border-radius: 24px;
+      box-shadow: 0 20px 50px rgba(28, 28, 24, .16);
+      padding: 12px 9px;
+      transform: rotate(5deg);
+      position: relative;
+    }
+
+    .phone-notch {
+      width: 42px;
+      height: 7px;
+      background: #20211f;
+      border-radius: 0 0 8px 8px;
+      margin: -12px auto 15px;
+    }
+
+    .phone-title {
+      font-size: 10px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .map-shape {
+      height: 80px;
+      border-radius: 9px;
+      background: #dbe7d9;
+      overflow: hidden;
+      position: relative;
+      margin-bottom: 12px;
+    }
+
+    .road {
+      position: absolute;
+      height: 9px;
+      width: 130%;
+      top: 32px;
+      left: -15px;
+      background: #fff;
+      transform: rotate(-24deg);
+      border: 1px solid #cdd8ca;
+    }
+
+    .road.r2 {
+      top: 45px;
+      transform: rotate(38deg);
+    }
+
+    .map-pin {
+      position: absolute;
+      width: 11px;
+      height: 11px;
+      border-radius: 50% 50% 50% 0;
+      background: #f2bd32;
+      transform: rotate(-45deg);
+      left: 65%;
+      top: 24px;
+      border: 2px solid white;
+    }
+
+    .phone-card {
+      padding: 9px;
+      border: 1px solid #eaeae5;
+      border-radius: 8px;
+      margin-top: 7px;
+    }
+
+    .phone-card .mini-line {
+      height: 4px;
+      margin-top: 4px;
+    }
+
+    .pay-window {
+      width: 72%;
+      max-width: 360px;
+      padding: 22px;
+      background: #fff;
+      border-radius: 13px;
+      box-shadow: 0 20px 50px rgba(28, 28, 24, .12);
+      transform: rotate(2deg);
+    }
+
+    .pay-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 9px;
+      color: #7a7889;
+    }
+
+    .pay-balance {
+      background: #29273a;
+      color: white;
+      border-radius: 10px;
+      padding: 17px;
+      margin: 15px 0;
+    }
+
+    .pay-balance small {
+      font-size: 8px;
+      opacity: .7;
+    }
+
+    .pay-balance strong {
+      display: block;
+      font-size: 22px;
+      margin-top: 7px;
+      letter-spacing: -1px;
+    }
+
+    .pay-bars {
+      display: flex;
+      align-items: end;
+      gap: 7px;
+      height: 65px;
+      padding: 0 8px;
+    }
+
+    .pay-bars i {
+      flex: 1;
+      background: #b7a9e5;
+      border-radius: 4px 4px 0 0;
+    }
+
+    .pay-bars i:nth-child(1) {
+      height: 38%;
+    }
+
+    .pay-bars i:nth-child(2) {
+      height: 65%;
+    }
+
+    .pay-bars i:nth-child(3) {
+      height: 48%;
+    }
+
+    .pay-bars i:nth-child(4) {
+      height: 82%;
+    }
+
+    .pay-bars i:nth-child(5) {
+      height: 58%;
+    }
+
+    .pay-bars i:nth-child(6) {
+      height: 100%;
+    }
+
+    .pay-bars i:nth-child(7) {
+      height: 72%;
+    }
+
+    .hiring-window {
+      width: 75%;
+      max-width: 365px;
+      padding: 17px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 20px 50px rgba(28, 28, 24, .12);
+      transform: rotate(-2deg);
+    }
+
+    .hiring-title {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: -.4px;
+      margin-bottom: 12px;
+    }
+
+    .candidate {
+      display: flex;
+      gap: 9px;
+      align-items: center;
+      border: 1px solid #ededeb;
+      border-radius: 8px;
+      padding: 8px;
+      margin-top: 7px;
+    }
+
+    .avatar {
+      width: 26px;
+      height: 26px;
+      border-radius: 8px;
+      background: #e9c6a5;
+    }
+
+    .avatar.b {
+      background: #c4d3c1;
+    }
+
+    .avatar.c {
+      background: #c8c0e1;
+    }
+
+    .candidate .mini-line {
+      margin-top: 4px;
+      height: 4px;
+    }
+
+    .candidate .mini-line:first-child {
+      width: 75px;
+      background: #bcbcb5;
+    }
+
+    .score {
+      margin-left: auto;
+      font-size: 10px;
+      font-weight: 800;
+      color: #608d6d;
+    }
+
+    .project-info {
+      padding: 19px 2px 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .project-title {
+      font-size: 20px;
+      letter-spacing: -.7px;
+      font-weight: 750;
+      margin: 0 0 7px;
+    }
+
+    .project-desc {
+      margin: 0;
+      font-size: 12px;
+      line-height: 1.65;
+      color: var(--muted);
+      max-width: 380px;
+    }
+
+    .project-meta {
+      font-size: 10px;
+      color: #777871;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .project-meta span {
+      display: block;
+      margin-bottom: 8px;
+      color: #343530;
+      font-weight: 650;
+    }
+
+    .tag {
+      display: inline-flex;
+      margin-top: 12px;
+      padding: 6px 9px;
+      background: rgba(255, 255, 255, .7);
+      border: 1px solid rgba(20, 20, 20, .08);
+      border-radius: 999px;
+      font-size: 9px;
+      color: #5e5f59;
+    }
+
+    .about-band {
+      background: #eeeee8;
+      border-radius: 28px;
+      padding: 58px;
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 55px;
+      align-items: start;
+    }
+
+    .about-mark {
+      width: 74px;
+      height: 74px;
+      border-radius: 23px;
+      background: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      font-weight: 850;
+      letter-spacing: -2px;
+      transform: rotate(-5deg);
+    }
+
+    .about-copy p {
+      font-size: 15px;
+      line-height: 1.9;
+      color: #62635d;
+      margin: 20px 0 0;
+      max-width: 650px;
+    }
+
+    .about-copy p strong {
+      color: var(--ink);
+      font-weight: 650;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--line);
+    }
+
+    .service {
+      padding: 24px 22px 10px 0;
+      border-right: 1px solid var(--line);
+      margin-right: 22px;
+    }
+
+    .service:last-child {
+      border-right: 0;
+      margin-right: 0;
+    }
+
+    .service-num {
+      color: #a3a49c;
+      font-size: 11px;
+      margin-bottom: 28px;
+    }
+
+    .service h3 {
+      font-size: 16px;
+      letter-spacing: -.5px;
+      margin: 0 0 10px;
+    }
+
+    .service p {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .journey {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .journey-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 23px;
+      min-height: 190px;
+    }
+
+    .journey-card .year {
+      color: #8a8b83;
+      font-size: 10px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .journey-card h3 {
+      margin: 28px 0 10px;
+      font-size: 17px;
+      letter-spacing: -.5px;
+    }
+
+    .journey-card p {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .contact {
+      background: var(--ink);
+      color: white;
+      border-radius: 26px;
+      padding: 55px 58px;
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 30px;
+    }
+
+    .contact .section-label {
+      color: #aaa99f;
+    }
+
+    .contact h2 {
+      max-width: 620px;
+    }
+
+    .contact p {
+      color: #b6b6ad;
+      font-size: 13px;
+      line-height: 1.7;
+      max-width: 450px;
+      margin: 18px 0 0;
+    }
+
+    .contact .btn {
+      background: var(--accent);
+      color: var(--ink);
+      flex-shrink: 0;
+    }
+
+    .contact .btn:hover {
+      background: #ffda65;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      padding: 30px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .footer-left strong {
+      display: block;
+      font-size: 18px;
+      letter-spacing: -1px;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+
+    .socials {
+      display: flex;
+      gap: 20px;
+    }
+
+    .socials a:hover {
+      color: var(--ink);
+    }
+
+    .note {
+      font-size: 10px;
+      color: #8b8c84;
+      margin-top: 12px;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .review-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      transition: transform .2s, border-color .2s, box-shadow .2s;
+    }
+
+    .review-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(223, 174, 27, .45);
+      box-shadow: 0 14px 28px -10px rgba(23, 23, 21, .07);
+    }
+
+    .review-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+
+    .review-stars {
+      display: inline-flex;
+      gap: 3px;
+      color: var(--accent-dark);
+    }
+
+    .review-stars svg {
+      width: 14px;
+      height: 14px;
+      fill: currentColor;
+    }
+
+    .review-tag {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: rgba(23, 23, 21, .05);
+      color: var(--muted);
+    }
+
+    .review-card.featured {
+      border-color: rgba(223, 174, 27, .35);
+      background: linear-gradient(180deg, #ffffff 0%, #faf8f2 100%);
+    }
+
+    .review-card.featured .review-tag {
+      background: rgba(245, 197, 66, .2);
+      color: #9c7304;
+    }
+
+    .review-quote {
+      font-size: 13px;
+      line-height: 1.7;
+      color: var(--ink);
+      margin: 0 0 20px 0;
+      flex-grow: 1;
+    }
+
+    .review-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+    }
+
+    .author-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 750;
+      color: white;
+      flex-shrink: 0;
+    }
+
+    .avatar-1 {
+      background: linear-gradient(135deg, #171715, #3c3d37);
+    }
+
+    .avatar-2 {
+      background: linear-gradient(135deg, #dfae1b, #f5c542);
+      color: #171715;
+    }
+
+    .avatar-3 {
+      background: linear-gradient(135deg, #2b3a4a, #4a637d);
+    }
+
+    .author-info h4 {
+      margin: 0;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .author-info p {
+      margin: 2px 0 0;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .reviews-metrics {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px 22px;
+      margin-top: 18px;
+    }
+
+    .metric-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .metric-val {
+      font-size: 20px;
+      font-weight: 850;
+      letter-spacing: -.6px;
+      color: var(--ink);
+    }
+
+    .metric-label {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 2px;
+      font-weight: 550;
+    }
+
+    .metric-divider {
+      width: 1px;
+      height: 26px;
+      background: var(--line);
+    }
+
     @media (max-width: 850px) {
-      .hero { grid-template-columns: 1fr; padding: 82px 0 65px; gap: 35px; }
-      .hero-side { max-width: 530px; }
-      .section-head { align-items: start; flex-direction: column; gap: 16px; }
-      .about-band { padding: 38px; gap: 30px; }
-      .services { grid-template-columns: repeat(2, 1fr); row-gap: 26px; }
-      .service:nth-child(2) { border-right: 0; }
-      .contact { align-items: start; flex-direction: column; padding: 42px; }
-      .reviews-grid { grid-template-columns: 1fr; }
-      .reviews-metrics { flex-direction: column; gap: 14px; padding: 20px; }
-      .metric-divider { width: 100%; height: 1px; }
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 82px 0 65px;
+        gap: 35px;
+      }
+
+      .hero-side {
+        max-width: 530px;
+      }
+
+      .section-head {
+        align-items: start;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .about-band {
+        padding: 38px;
+        gap: 30px;
+      }
+
+      .services {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 26px;
+      }
+
+      .service:nth-child(2) {
+        border-right: 0;
+      }
+
+      .contact {
+        align-items: start;
+        flex-direction: column;
+        padding: 42px;
+      }
+
+      .reviews-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .reviews-metrics {
+        flex-direction: column;
+        gap: 14px;
+        padding: 20px;
+      }
+
+      .metric-divider {
+        width: 100%;
+        height: 1px;
+      }
     }
+
     @media (max-width: 600px) {
-      .wrap { width: min(var(--max), calc(100% - 32px)); }
-      .nav { height: 70px; }
-      .nav-links { gap: 14px; }
-      .nav-links a:not(.nav-cta) { display: none; }
-      .nav-cta { padding: 11px 14px; }
-      .hero { padding: 68px 0 52px; }
-      h1 { font-size: clamp(47px, 13vw, 66px); letter-spacing: -3.6px; margin-top: 22px; }
-      h1 .highlight::after { height: 12px; bottom: 4px; }
-      .hero-copy { font-size: 14px; }
-      .section { padding: 54px 0; }
-      .projects { grid-template-columns: 1fr; gap: 30px; }
-      .project-visual { min-height: 275px; }
-      .project-info { gap: 10px; }
-      .project-title { font-size: 18px; }
-      .project-meta { font-size: 9px; }
-      .about-band { grid-template-columns: 1fr; padding: 28px; border-radius: 20px; gap: 24px; }
-      .about-copy p { font-size: 13px; }
-      .services { grid-template-columns: 1fr 1fr; }
-      .service { margin-right: 13px; padding-right: 13px; }
-      .service h3 { font-size: 14px; }
-      .journey { grid-template-columns: 1fr; }
-      .journey-card { min-height: auto; }
-      .journey-card h3 { margin-top: 20px; }
-      .contact { padding: 32px 25px; border-radius: 20px; }
-      footer { align-items: start; flex-direction: column; }
-      .socials { flex-wrap: wrap; gap: 15px; }
+      .wrap {
+        width: min(var(--max), calc(100% - 32px));
+      }
+
+      .nav {
+        height: 70px;
+      }
+
+      .nav-links {
+        gap: 14px;
+      }
+
+      .nav-links a:not(.nav-cta) {
+        display: none;
+      }
+
+      .nav-cta {
+        padding: 11px 14px;
+      }
+
+      .hero {
+        padding: 68px 0 52px;
+      }
+
+      h1 {
+        font-size: clamp(47px, 13vw, 66px);
+        letter-spacing: -3.6px;
+        margin-top: 22px;
+      }
+
+      h1 .highlight::after {
+        height: 12px;
+        bottom: 4px;
+      }
+
+      .hero-copy {
+        font-size: 14px;
+      }
+
+      .section {
+        padding: 54px 0;
+      }
+
+      .projects {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .project-visual {
+        min-height: 275px;
+      }
+
+      .project-info {
+        gap: 10px;
+      }
+
+      .project-title {
+        font-size: 18px;
+      }
+
+      .project-meta {
+        font-size: 9px;
+      }
+
+      .about-band {
+        grid-template-columns: 1fr;
+        padding: 28px;
+        border-radius: 20px;
+        gap: 24px;
+      }
+
+      .about-copy p {
+        font-size: 13px;
+      }
+
+      .services {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .service {
+        margin-right: 13px;
+        padding-right: 13px;
+      }
+
+      .service h3 {
+        font-size: 14px;
+      }
+
+      .journey {
+        grid-template-columns: 1fr;
+      }
+
+      .journey-card {
+        min-height: auto;
+      }
+
+      .journey-card h3 {
+        margin-top: 20px;
+      }
+
+      .contact {
+        padding: 32px 25px;
+        border-radius: 20px;
+      }
+
+      footer {
+        align-items: start;
+        flex-direction: column;
+      }
+
+      .socials {
+        flex-wrap: wrap;
+        gap: 15px;
+      }
     }
   </style>
 </head>
+
 <body>
   <header class="wrap nav">
     <a class="brand" href="#home" aria-label="Maul homepage">maul<span>.</span></a>
@@ -226,14 +1192,17 @@
       <div>
         <div class="eyebrow"><span class="status-dot"></span> Maul · Product Designer</div>
         <h1>Designing digital products <span class="highlight">with purpose.</span></h1>
-        <p class="hero-copy">I turn business needs into thoughtful digital experiences through user-centered design and functional interfaces.</p>
+        <p class="hero-copy">I turn business needs into thoughtful digital experiences through user-centered design and
+          functional interfaces.</p>
         <div class="hero-actions">
           <a class="btn btn-dark" href="#work">Explore projects <span>↘</span></a>
           <a class="btn btn-light" href="#contact">Let's connect <span>↗</span></a>
         </div>
       </div>
       <aside class="hero-side">
-        <p><strong>Product design, grounded in business.</strong><br />I work across product thinking, user experience, and interface design to help shape digital products that are useful for people and meaningful for businesses.</p>
+        <p><strong>Product design, grounded in business.</strong><br />I work across product thinking, user experience,
+          and interface design to help shape digital products that are useful for people and meaningful for businesses.
+        </p>
         <div class="side-meta">
           <span class="pill">Product Strategy</span>
           <span class="pill">UX / UI Design</span>
@@ -248,36 +1217,59 @@
           <div class="section-label">Selected work · Project previews</div>
           <h2>A few things I've helped shape.</h2>
         </div>
-        <p class="section-intro">From mobile applications to business systems, these previews offer a glimpse into the products and problems I've worked on.</p>
+        <p class="section-intro">From mobile applications to business systems, these previews offer a glimpse into the
+          products and problems I've worked on.</p>
       </div>
 
       <div class="projects">
         <article class="project">
-          <div class="project-visual visual-pos" aria-label="Abstract POS dashboard preview">
-            <div class="mock-window">
-              <div class="mock-top"><i></i><i></i><i></i></div>
-              <div class="pos-layout">
-                <div class="pos-main">
-                  <div class="tiny-label">TODAY'S SALES</div>
-                  <div class="big-price">Rp 2.450k</div>
-                  <div class="mini-line"></div><div class="mini-line short"></div>
-                </div>
-                <div class="pos-items">
-                  <div class="item-row"><div class="item-thumb"></div><div class="item-copy"><div class="mini-line"></div><div class="mini-line short"></div></div></div>
-                  <div class="item-row"><div class="item-thumb two"></div><div class="item-copy"><div class="mini-line"></div><div class="mini-line short"></div></div></div>
-                  <div class="item-row"><div class="item-thumb three"></div><div class="item-copy"><div class="mini-line"></div><div class="mini-line short"></div></div></div>
+          <a href="detail-project.html">
+            <div class="project-visual visual-pos" aria-label="Abstract POS dashboard preview">
+              <div class="mock-window">
+                <div class="mock-top"><i></i><i></i><i></i></div>
+                <div class="pos-layout">
+                  <div class="pos-main">
+                    <div class="tiny-label">TODAY'S SALES</div>
+                    <div class="big-price">Rp 2.450k</div>
+                    <div class="mini-line"></div>
+                    <div class="mini-line short"></div>
+                  </div>
+                  <div class="pos-items">
+                    <div class="item-row">
+                      <div class="item-thumb"></div>
+                      <div class="item-copy">
+                        <div class="mini-line"></div>
+                        <div class="mini-line short"></div>
+                      </div>
+                    </div>
+                    <div class="item-row">
+                      <div class="item-thumb two"></div>
+                      <div class="item-copy">
+                        <div class="mini-line"></div>
+                        <div class="mini-line short"></div>
+                      </div>
+                    </div>
+                    <div class="item-row">
+                      <div class="item-thumb three"></div>
+                      <div class="item-copy">
+                        <div class="mini-line"></div>
+                        <div class="mini-line short"></div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="project-info">
-            <div>
-              <h3 class="project-title">Aleighty POS</h3>
-              <p class="project-desc">A point-of-sale experience designed to support everyday retail transactions and operations.</p>
-              <span class="tag">Project preview</span>
+            <div class="project-info">
+              <div>
+                <h3 class="project-title">Aleighty POS</h3>
+                <p class="project-desc">A point-of-sale experience designed to support everyday retail transactions and
+                  operations.</p>
+                <span class="tag">Project preview</span>
+              </div>
+              <div class="project-meta"><span>Retail · SaaS</span>Product Design</div>
             </div>
-            <div class="project-meta"><span>Retail · SaaS</span>Product Design</div>
-          </div>
+          </a>
         </article>
 
         <article class="project">
@@ -285,16 +1277,28 @@
             <div class="phone">
               <div class="phone-notch"></div>
               <div class="phone-title">Where to today?</div>
-              <div class="map-shape"><div class="road"></div><div class="road r2"></div><div class="map-pin"></div></div>
+              <div class="map-shape">
+                <div class="road"></div>
+                <div class="road r2"></div>
+                <div class="map-pin"></div>
+              </div>
               <div class="tiny-label">YOUR DESTINATION</div>
-              <div class="phone-card"><div class="tiny-label">Ride option</div><div class="mini-line" style="width:82%"></div><div class="mini-line short"></div></div>
-              <div class="phone-card"><div class="tiny-label">Estimated fare</div><div class="mini-line" style="width:58%"></div></div>
+              <div class="phone-card">
+                <div class="tiny-label">Ride option</div>
+                <div class="mini-line" style="width:82%"></div>
+                <div class="mini-line short"></div>
+              </div>
+              <div class="phone-card">
+                <div class="tiny-label">Estimated fare</div>
+                <div class="mini-line" style="width:58%"></div>
+              </div>
             </div>
           </div>
           <div class="project-info">
             <div>
               <h3 class="project-title">ODIN Mobility</h3>
-              <p class="project-desc">A mobility platform exploring clearer ride-booking flows for customers, drivers, and institutions.</p>
+              <p class="project-desc">A mobility platform exploring clearer ride-booking flows for customers, drivers,
+                and institutions.</p>
               <span class="tag">Case study in progress</span>
             </div>
             <div class="project-meta"><span>Mobility · App</span>Product Design</div>
@@ -305,7 +1309,8 @@
           <div class="project-visual visual-pay" aria-label="Abstract payment dashboard preview">
             <div class="pay-window">
               <div class="pay-header"><span>OVERVIEW</span><span>•••</span></div>
-              <div class="pay-balance"><small>Total transactions</small><strong>Rp 84.280.000</strong><small>↑ 12.8% this month</small></div>
+              <div class="pay-balance"><small>Total transactions</small><strong>Rp 84.280.000</strong><small>↑ 12.8%
+                  this month</small></div>
               <div class="tiny-label">TRANSACTION VOLUME</div>
               <div class="pay-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
             </div>
@@ -313,7 +1318,8 @@
           <div class="project-info">
             <div>
               <h3 class="project-title">SinarPay Dashboard</h3>
-              <p class="project-desc">A business dashboard concept for making payment operations and transaction data easier to manage.</p>
+              <p class="project-desc">A business dashboard concept for making payment operations and transaction data
+                easier to manage.</p>
               <span class="tag">Project preview</span>
             </div>
             <div class="project-meta"><span>Fintech · Dashboard</span>UI/UX Design</div>
@@ -325,22 +1331,42 @@
             <div class="hiring-window">
               <div class="tiny-label">RECRUITMENT OVERVIEW</div>
               <div class="hiring-title">Application pipeline</div>
-              <div class="candidate"><div class="avatar"></div><div><div class="mini-line"></div><div class="mini-line short"></div></div><span class="score">92%</span></div>
-              <div class="candidate"><div class="avatar b"></div><div><div class="mini-line"></div><div class="mini-line short"></div></div><span class="score">86%</span></div>
-              <div class="candidate"><div class="avatar c"></div><div><div class="mini-line"></div><div class="mini-line short"></div></div><span class="score">81%</span></div>
+              <div class="candidate">
+                <div class="avatar"></div>
+                <div>
+                  <div class="mini-line"></div>
+                  <div class="mini-line short"></div>
+                </div><span class="score">92%</span>
+              </div>
+              <div class="candidate">
+                <div class="avatar b"></div>
+                <div>
+                  <div class="mini-line"></div>
+                  <div class="mini-line short"></div>
+                </div><span class="score">86%</span>
+              </div>
+              <div class="candidate">
+                <div class="avatar c"></div>
+                <div>
+                  <div class="mini-line"></div>
+                  <div class="mini-line short"></div>
+                </div><span class="score">81%</span>
+              </div>
             </div>
           </div>
           <div class="project-info">
             <div>
               <h3 class="project-title">Hiring Platform</h3>
-              <p class="project-desc">A recruitment management interface for organizing hospitals, job listings, applications, and reporting.</p>
+              <p class="project-desc">A recruitment management interface for organizing hospitals, job listings,
+                applications, and reporting.</p>
               <span class="tag">Case study in progress</span>
             </div>
             <div class="project-meta"><span>HR Tech · Platform</span>Product Design</div>
           </div>
         </article>
       </div>
-      <p class="note">Project visuals are illustrative placeholders. Replace them with real screenshots and confirm each project description, role, and status before publishing.</p>
+      <p class="note">Project visuals are illustrative placeholders. Replace them with real screenshots and confirm each
+        project description, role, and status before publishing.</p>
     </section>
 
     <section class="wrap section" id="about">
@@ -351,8 +1377,11 @@
         </div>
         <div class="about-copy">
           <h2>Designing with purpose, building with curiosity.</h2>
-          <p>I'm Maul, a Product Designer with a background in UI/UX design. I enjoy turning <strong>business requirements and user needs into clear, thoughtful digital experiences.</strong></p>
-          <p>Over the years, I've worked across different product types, from mobile apps to business tools. My process connects the dots between understanding a problem, mapping a flow, shaping an interface, and making ideas tangible through prototypes.</p>
+          <p>I'm Maul, a Product Designer with a background in UI/UX design. I enjoy turning <strong>business
+              requirements and user needs into clear, thoughtful digital experiences.</strong></p>
+          <p>Over the years, I've worked across different product types, from mobile apps to business tools. My process
+            connects the dots between understanding a problem, mapping a flow, shaping an interface, and making ideas
+            tangible through prototypes.</p>
         </div>
       </div>
     </section>
@@ -363,7 +1392,8 @@
           <div class="section-label">What I do</div>
           <h2>From product thinking<br />to interface design.</h2>
         </div>
-        <p class="section-intro">A flexible design toolkit for moving from an early idea to a more considered product experience.</p>
+        <p class="section-intro">A flexible design toolkit for moving from an early idea to a more considered product
+          experience.</p>
       </div>
       <div class="services">
         <article class="service">
@@ -395,18 +1425,21 @@
           <div class="section-label">The journey so far</div>
           <h2>Learning by making.</h2>
         </div>
-        <p class="section-intro">A growing practice shaped by hands-on projects, collaboration, and a constant curiosity about how digital products work.</p>
+        <p class="section-intro">A growing practice shaped by hands-on projects, collaboration, and a constant curiosity
+          about how digital products work.</p>
       </div>
       <div class="journey">
         <article class="journey-card">
           <div class="year">The beginning</div>
           <h3>Curiosity became a craft.</h3>
-          <p>Started exploring visual design and gradually moved toward understanding how people interact with digital products.</p>
+          <p>Started exploring visual design and gradually moved toward understanding how people interact with digital
+            products.</p>
         </article>
         <article class="journey-card">
           <div class="year">Hands-on learning</div>
           <h3>Learning through projects.</h3>
-          <p>Built experience by working through real briefs, translating requirements into flows, screens, and prototypes.</p>
+          <p>Built experience by working through real briefs, translating requirements into flows, screens, and
+            prototypes.</p>
         </article>
         <article class="journey-card">
           <div class="year">Today</div>
@@ -422,21 +1455,33 @@
           <div class="section-label">Customer Reviews</div>
           <h2>Trusted by teams &amp; founders.</h2>
         </div>
-        <p class="section-intro">What clients and engineering collaborators say about working together on product design, UX strategy, and design systems.</p>
+        <p class="section-intro">What clients and engineering collaborators say about working together on product
+          design, UX strategy, and design systems.</p>
       </div>
       <div class="reviews-grid">
         <article class="review-card">
           <div class="review-card-top">
             <div class="review-stars" aria-label="5 out of 5 stars">
-              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg viewBox="0 0 24 24">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg viewBox="0 0 24 24">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg viewBox="0 0 24 24">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg viewBox="0 0 24 24">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
             </div>
             <span class="review-tag">SaaS Dashboard</span>
           </div>
-          <p class="review-quote">"Maul completely revamped our analytics dashboard. User onboarding completion jumped by 34%, and our frontend developers loved the structured Figma tokens and component specs."</p>
+          <p class="review-quote">"Maul completely revamped our analytics dashboard. User onboarding completion jumped
+            by 34%, and our frontend developers loved the structured Figma tokens and component specs."</p>
           <div class="review-author">
             <div class="author-avatar avatar-1"><span>AR</span></div>
             <div class="author-info">
@@ -448,15 +1493,26 @@
         <article class="review-card featured">
           <div class="review-card-top">
             <div class="review-stars" aria-label="5 out of 5 stars">
-              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg viewBox="0 0 24 24">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg viewBox="0 0 24 24">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg viewBox="0 0 24 24">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg viewBox="0 0 24 24">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
             </div>
             <span class="review-tag">Fintech App</span>
           </div>
-          <p class="review-quote">"One of the rare product designers who truly understands business goals alongside UX fidelity. Maul reduced checkout drop-offs significantly within our first sprint cycle."</p>
+          <p class="review-quote">"One of the rare product designers who truly understands business goals alongside UX
+            fidelity. Maul reduced checkout drop-offs significantly within our first sprint cycle."</p>
           <div class="review-author">
             <div class="author-avatar avatar-2"><span>SL</span></div>
             <div class="author-info">
@@ -468,15 +1524,26 @@
         <article class="review-card">
           <div class="review-card-top">
             <div class="review-stars" aria-label="5 out of 5 stars">
-              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg viewBox="0 0 24 24">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg viewBox="0 0 24 24">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg viewBox="0 0 24 24">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg viewBox="0 0 24 24">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
             </div>
             <span class="review-tag">Mobile UX</span>
           </div>
-          <p class="review-quote">"Fast turnaround, proactive communication, and top-tier micro-interactions. Working with Maul was one of the smoothest designer-developer collaborations we've experienced."</p>
+          <p class="review-quote">"Fast turnaround, proactive communication, and top-tier micro-interactions. Working
+            with Maul was one of the smoothest designer-developer collaborations we've experienced."</p>
           <div class="review-author">
             <div class="author-avatar avatar-3"><span>DK</span></div>
             <div class="author-info">
@@ -509,7 +1576,8 @@
         <div>
           <div class="section-label">Have a project in mind?</div>
           <h2>Let's build something meaningful.</h2>
-          <p>Working on a new digital product or improving an existing experience? I'd be happy to hear what you're exploring.</p>
+          <p>Working on a new digital product or improving an existing experience? I'd be happy to hear what you're
+            exploring.</p>
         </div>
         <a class="btn" href="mailto:hello@example.com">Get in touch <span>↗</span></a>
       </div>
@@ -521,9 +1589,10 @@
     <div class="socials">
       <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
       <a href="https://dribbble.com/" target="_blank" rel="noreferrer">Dribbble ↗</a>
-      <a href="https://www.behance.net/" target="_blank" rel="noreferrer">Behance ↗</a>
+      <a href="https://www.behance.net/" target="_blank" rel="noreferrer">Chat ↗</a>
     </div>
     <span>© 2026 Maul</span>
   </footer>
 </body>
+
 </html>
