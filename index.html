@@ -145,6 +145,28 @@
     .socials { display: flex; gap: 20px; }
     .socials a:hover { color: var(--ink); }
     .note { font-size: 10px; color: #8b8c84; margin-top: 12px; }
+    .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .review-card { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; position: relative; transition: transform .2s, border-color .2s, box-shadow .2s; }
+    .review-card:hover { transform: translateY(-3px); border-color: rgba(223,174,27,.45); box-shadow: 0 14px 28px -10px rgba(23,23,21,.07); }
+    .review-card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+    .review-stars { display: inline-flex; gap: 3px; color: var(--accent-dark); }
+    .review-stars svg { width: 14px; height: 14px; fill: currentColor; }
+    .review-tag { font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; padding: 3px 8px; border-radius: 999px; background: rgba(23,23,21,.05); color: var(--muted); }
+    .review-card.featured { border-color: rgba(223,174,27,.35); background: linear-gradient(180deg, #ffffff 0%, #faf8f2 100%); }
+    .review-card.featured .review-tag { background: rgba(245,197,66,.2); color: #9c7304; }
+    .review-quote { font-size: 13px; line-height: 1.7; color: var(--ink); margin: 0 0 20px 0; flex-grow: 1; }
+    .review-author { display: flex; align-items: center; gap: 12px; padding-top: 16px; border-top: 1px solid var(--line); }
+    .author-avatar { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 750; color: white; flex-shrink: 0; }
+    .avatar-1 { background: linear-gradient(135deg, #171715, #3c3d37); }
+    .avatar-2 { background: linear-gradient(135deg, #dfae1b, #f5c542); color: #171715; }
+    .avatar-3 { background: linear-gradient(135deg, #2b3a4a, #4a637d); }
+    .author-info h4 { margin: 0; font-size: 13px; font-weight: 700; color: var(--ink); }
+    .author-info p { margin: 2px 0 0; font-size: 11px; color: var(--muted); }
+    .reviews-metrics { display: flex; align-items: center; justify-content: space-around; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 18px 22px; margin-top: 18px; }
+    .metric-item { display: flex; flex-direction: column; align-items: center; text-align: center; }
+    .metric-val { font-size: 20px; font-weight: 850; letter-spacing: -.6px; color: var(--ink); }
+    .metric-label { font-size: 11px; color: var(--muted); margin-top: 2px; font-weight: 550; }
+    .metric-divider { width: 1px; height: 26px; background: var(--line); }
     @media (max-width: 850px) {
       .hero { grid-template-columns: 1fr; padding: 82px 0 65px; gap: 35px; }
       .hero-side { max-width: 530px; }
@@ -153,6 +175,9 @@
       .services { grid-template-columns: repeat(2, 1fr); row-gap: 26px; }
       .service:nth-child(2) { border-right: 0; }
       .contact { align-items: start; flex-direction: column; padding: 42px; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .reviews-metrics { flex-direction: column; gap: 14px; padding: 20px; }
+      .metric-divider { width: 100%; height: 1px; }
     }
     @media (max-width: 600px) {
       .wrap { width: min(var(--max), calc(100% - 32px)); }
@@ -191,6 +216,7 @@
       <a href="#work">Work</a>
       <a href="#about">About</a>
       <a href="#services">Expertise</a>
+      <a href="#reviews">Reviews</a>
       <a class="nav-cta" href="#contact">Let's talk <span>↗</span></a>
     </nav>
   </header>
@@ -387,6 +413,94 @@
           <h3>Designing beyond screens.</h3>
           <p>Connecting user experience with business context to help teams make more considered product decisions.</p>
         </article>
+      </div>
+    </section>
+
+    <section class="wrap section" id="reviews">
+      <div class="section-head">
+        <div>
+          <div class="section-label">Customer Reviews</div>
+          <h2>Trusted by teams &amp; founders.</h2>
+        </div>
+        <p class="section-intro">What clients and engineering collaborators say about working together on product design, UX strategy, and design systems.</p>
+      </div>
+      <div class="reviews-grid">
+        <article class="review-card">
+          <div class="review-card-top">
+            <div class="review-stars" aria-label="5 out of 5 stars">
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </div>
+            <span class="review-tag">SaaS Dashboard</span>
+          </div>
+          <p class="review-quote">"Maul completely revamped our analytics dashboard. User onboarding completion jumped by 34%, and our frontend developers loved the structured Figma tokens and component specs."</p>
+          <div class="review-author">
+            <div class="author-avatar avatar-1"><span>AR</span></div>
+            <div class="author-info">
+              <h4>Alex Rivera</h4>
+              <p>Founder &amp; CEO, MetricFlow</p>
+            </div>
+          </div>
+        </article>
+        <article class="review-card featured">
+          <div class="review-card-top">
+            <div class="review-stars" aria-label="5 out of 5 stars">
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </div>
+            <span class="review-tag">Fintech App</span>
+          </div>
+          <p class="review-quote">"One of the rare product designers who truly understands business goals alongside UX fidelity. Maul reduced checkout drop-offs significantly within our first sprint cycle."</p>
+          <div class="review-author">
+            <div class="author-avatar avatar-2"><span>SL</span></div>
+            <div class="author-info">
+              <h4>Sarah Lin</h4>
+              <p>Head of Product, NovaPay</p>
+            </div>
+          </div>
+        </article>
+        <article class="review-card">
+          <div class="review-card-top">
+            <div class="review-stars" aria-label="5 out of 5 stars">
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </div>
+            <span class="review-tag">Mobile UX</span>
+          </div>
+          <p class="review-quote">"Fast turnaround, proactive communication, and top-tier micro-interactions. Working with Maul was one of the smoothest designer-developer collaborations we've experienced."</p>
+          <div class="review-author">
+            <div class="author-avatar avatar-3"><span>DK</span></div>
+            <div class="author-info">
+              <h4>David Kurniawan</h4>
+              <p>Tech Lead, Omnis Health</p>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="reviews-metrics">
+        <div class="metric-item">
+          <span class="metric-val">99%</span>
+          <span class="metric-label">Client Satisfaction</span>
+        </div>
+        <div class="metric-divider"></div>
+        <div class="metric-item">
+          <span class="metric-val">20+</span>
+          <span class="metric-label">Shipped Projects</span>
+        </div>
+        <div class="metric-divider"></div>
+        <div class="metric-item">
+          <span class="metric-val">4.9 / 5</span>
+          <span class="metric-label">Collaboration Rating</span>
+        </div>
       </div>
     </section>
 
